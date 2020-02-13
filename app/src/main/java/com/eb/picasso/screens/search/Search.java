@@ -51,7 +51,7 @@ public class Search extends AppCompatActivity {
 
         _disposable =
                 RxTextView.textChangeEvents(binding.searchEt)
-                        .debounce(1000, TimeUnit.MILLISECONDS) // default Scheduler is Computation
+                        .debounce(600, TimeUnit.MILLISECONDS) // default Scheduler is Computation
                         .filter(changes -> changes!=null && changes.toString().length()>0)
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(_getSearchObserver());
