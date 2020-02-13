@@ -9,6 +9,7 @@ interface ApiService {
     @GET("api")
     suspend fun fetchImages(
         @Query("q") type:String,
-        @Query("key") apiKey:String
+        @Query("key") apiKey:String,
+        @Query("page") page:Int
         ): PictureDao
 }
